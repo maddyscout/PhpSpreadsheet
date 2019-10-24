@@ -4145,7 +4145,9 @@ class Calculation
                 }
                 if (($cellID == 'AC99') || (isset($pCell) && $pCell->getCoordinate() == 'AC99')) {
                     if (defined('RESOLVING')) {
-                        define('RESOLVING2', true);
+                        if (!defined('RESOLVING2')) {
+                            define('RESOLVING2', true);
+                        }
                     } else {
                         define('RESOLVING', true);
                     }
